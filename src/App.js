@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import View from './View';
+
+import { Provider } from 'react-redux';
+import store from './store';
+
+import Root from './components/Root';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -29,7 +33,9 @@ export default class App extends Component {
     return (
       <StyledApp>
         <GlobalStyle />
-        <View />
+        <Provider store={store}>
+          <Root />
+        </Provider>
       </StyledApp>
     );
   }
