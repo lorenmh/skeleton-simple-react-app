@@ -16,6 +16,10 @@ const StyledHeading = styled.h1`
   color: rgb(255,93,93);
 `;
 
+const StyledButton = styled.button`
+  background-color: rgb(100,200,120);
+`;
+
 class Root extends Component {
   constructor(props) {
     super(props);
@@ -28,11 +32,12 @@ class Root extends Component {
   }
 
   render() {
-    window.f = this.props.incrementCount;
     return (
       <StyledView>
-        <StyledHeading>Hello &#58;&#41;</StyledHeading>
+      <StyledHeading>Hello &#58;&#41;</StyledHeading>
+      <StyledButton onClick={this.props.incrementCount}>increment</StyledButton>
         <StyledHeading>{this.props.count}</StyledHeading>
+      <StyledButton onClick={this.props.decrementCount}>decrement</StyledButton>
       </StyledView>
     );
   }
